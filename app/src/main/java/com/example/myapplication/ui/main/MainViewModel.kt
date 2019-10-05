@@ -1,13 +1,24 @@
 package com.example.myapplication.ui.main
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
-    val employee:MutableLiveData<EmployeeList>?=null
+class MainViewModel : ViewModel(),Listener {
 
-    fun setEmployee(){
 
+    var employee: MutableLiveData<List<Employee>>?=null
+
+
+    fun setRepo(){
+        employee=MutableLiveData<List<Employee>>()
+       val repository= Repository()
+        repository.listener=this
+        repository.getData()
+    }
+
+    override fun setDataListener(data: MutableLiveData<List<Employee>>?) {
+       employee=data
     }
 
 }
