@@ -4,6 +4,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("v1/employees")
+    @GET("api/Activities")
     fun getEmployeeData(): Call<List<Employee>>
 }

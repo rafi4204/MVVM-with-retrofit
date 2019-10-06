@@ -18,7 +18,7 @@ class MainViewModel : ViewModel(),Listener {
     }
 
     override fun setDataListener(data: MutableLiveData<List<Employee>>?) {
-       employee=data
+       employee?.value=data?.value
     }
 
 }

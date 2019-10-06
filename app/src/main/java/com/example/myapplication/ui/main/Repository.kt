@@ -18,7 +18,7 @@ var listener:Listener?=null
     fun getData(){
         var data=MutableLiveData<List<Employee>>()
       val  retrofit = Retrofit.Builder()
-            .baseUrl("http://dummy.restapiexample.com/api/")
+            .baseUrl("https://fakerestapi.azurewebsites.net/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
